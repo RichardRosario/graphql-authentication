@@ -4,11 +4,29 @@ import query from '../queries/CurrentUser';
 
 
 class Header extends Component {
+  renderButtons() {
+    const { loading, user } = this.props.data;
+
+    if(loading) { return <div />; }
+
+    if(user) {
+      return <div>Logout</div>;
+    } else {
+      return (
+        <div>Please sign in</div>
+      );
+    }
+
+  }
+
   render() {
-    console.log(this.props.data);
-    
+
     return (
-      <div>This is the Header component</div>
+     <nav>
+      <div className="nav-wrapper">
+        {this.renderButtons()}
+      </div>
+     </nav>
     );
   }
 }

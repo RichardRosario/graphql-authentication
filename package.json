@@ -4,7 +4,7 @@
   "description": "authentication in graphql project",
   "repository": {
     "type": "git"
-    },
+  },
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js --ignore client"
