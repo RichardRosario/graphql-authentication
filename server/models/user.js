@@ -8,8 +8,6 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   email: String,
   password: String
-}, {
-  usePushEach: true
 });
 
 // The user's password is never saved in plain text.  Prior to saving the

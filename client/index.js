@@ -4,11 +4,7 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { IndexRoute, Route, Router, hashHistory } from 'react-router';
 
-// import ApolloClient from 'apollo-client';
-// import { HttpLink } from 'apollo-link-http';
-// import { InMemoryCache } from 'apollo-cache-inmemory'
-// import { ApolloProvider } from 'react-apollo';
-
+import LoginForm from './components/LoginForm';
 import App from './components/App';
 
 const networkInterface = createNetworkInterface({
@@ -17,7 +13,6 @@ const networkInterface = createNetworkInterface({
     credentials: 'same-origin'
   }
 });
-
 
 const client = new ApolloClient({
   networkInterface,
@@ -37,6 +32,8 @@ const Root = () => {
     <ApolloProvider client={client}>
       <Router history={hashHistory}>
         <Route path="/" component={App} />
+        <Route path="login" component={LoginForm} />
+       
       </Router>
     </ApolloProvider>
   );
